@@ -6,7 +6,7 @@ exports.getAllDanceClasses = async (req, res, next) => {
   try {
     const danceClasses = await DanceClass.find();
     if (!danceClasses) {
-      throw new NotFoundError('There are no dance classes available')
+      throw new NotFoundError('There are no dance classes available.')
     }
     res.json(danceClasses)
   }catch (error) {
@@ -23,7 +23,7 @@ exports.getAllActiveClasses = async (req, res, next) => {
     const activeDanceClasses = await DanceClass.find({status: true})
 
     if (!activeDanceClasses.length) {
-      throw new NotFoundError('There are not active dance classes available in this term')
+      throw new NotFoundError('There are not active dance classes available in this term.')
     }
     res.json(activeDanceClasses)
   } catch (error) {

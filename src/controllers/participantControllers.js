@@ -54,13 +54,7 @@ exports.updateDancer = async (req, res, next) => {
     const dancerId = req.params.dancerId
     let {email, paymentStatus} = req.body
 
-    /*if (!name) {
-      return res.status(400).json ({
-        message: 'What do you want to change'
-      });
-    }*/
     const dancerUpdate = await participant.findById(dancerId);
-    console.log(dancerId)
 
     if (email) {
       dancerUpdate.email = email
